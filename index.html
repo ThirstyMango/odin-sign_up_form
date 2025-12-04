@@ -39,12 +39,72 @@
             href="https://unsplash.com/photos/green-leaf-plant-in-close-up-photography-25xggax4bSA"
             >Hallie West</a
           >
-          on Unsplash
+          on <a href="https://unsplash.com/">Unsplash</a>
         </div>
       </section>
 
       <!-- Right section of the app -->
-      <section class="app__main"></section>
+      <section class="app__content content">
+        <div class="content__par">
+          <p>
+            You probably do need to have more photos of plants in your life. And
+            we are happy to provide them for you. Sign up now for free access to
+            the largest database of plant photos.
+          </p>
+          <p>What are you waiting for?</p>
+        </div>
+
+        <form class="content_form form" action="#" method="get">
+          <h1 class="form__header">Let's do this!</h1>
+
+          <div class="form__control control">
+            <label for="first_name" class="control__label"> First name </label>
+            <input
+              id="first_name"
+              type="text"
+              class="control__input"
+              required
+            />
+          </div>
+
+          <div class="form__control control">
+            <label for="last_name" class="control__label"> Last name </label>
+            <input id="last_name" type="text" class="control__input" required />
+          </div>
+
+          <div class="form__control control">
+            <label for="email" class="control__label">Email</label>
+            <input id="email" type="text" class="control__input" required />
+          </div>
+
+          <div class="form__control control">
+            <label for="phone_number" class="control__label">
+              Phone number
+            </label>
+            <input id="phone_number" type="text" class="control__input" />
+          </div>
+
+          <div class="form__control control">
+            <label for="password" class="control__label"> Password </label>
+            <input id="password" type="text" class="control__input" />
+          </div>
+
+          <div class="form__control control">
+            <label for="confirm_password" class="control__label">
+              Confirm password
+            </label>
+            <input id="confirm_password" type="text" class="control__input" />
+          </div>
+        </form>
+
+        <div class="content__signup signup">
+          <button class="signup__btn" type="button">Create account</button>
+        </div>
+
+        <p class="content__login">
+          Already have an account? <a href="#">Log in</a>
+        </p>
+      </section>
     </div>
   </body>
 </html>
