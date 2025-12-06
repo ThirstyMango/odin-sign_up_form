@@ -3,12 +3,14 @@
   --btn_border_col_valid: green;
   --btn_border_col_alert: red;
   --btn_bg_col_main: #596d48;
+  --btn_bg_col_main_focus: #6c7c5e;
   --bg_image_main: url("../images/halie-west-25xggax4bSA-unsplash.jpg");
   --left_section_width: 40vw;
   --right_section_width: calc(100vw - var(--left_section_width));
   --bg_black_transparent: rgba(0, 0, 0, 0.5);
   --bg_white_subtle: rgb(248, 248, 248);
-  --pading_right_section: 3rem;
+  --bg_input_subtle_white: rgb(251, 251, 251);
+  --pading_right_section: 4rem;
 }
 
 .app {
@@ -72,32 +74,67 @@
   font-size: 1.4rem;
   font-weight: 600;
   padding: var(--pading_right_section);
-  max-width: 60ch;
+  max-width: 70ch;
+}
+
+.content__form-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  background-color: white;
+  padding: 2rem var(--pading_right_section);
+  box-shadow: rgba(0, 0, 0, 0.03) 0px 2px 1px, rgba(0, 0, 0, 0.03) 0px 4px 2px,
+    rgba(0, 0, 0, 0.03) 0px 4px 2px, rgba(0, 0, 0, 0.03) 0px 8px 4px,
+    rgba(0, 0, 0, 0) 0px 16px 8px;
 }
 
 .form {
   flex: 0 1 28%;
-  background-color: white;
   display: flex;
+  gap: 2.5rem 5rem;
+  max-width: 35rem;
   flex-wrap: wrap;
-  padding: 1rem var(--pading_right_section);
-}
-
-.form__header {
-  flex: 1 0 100%;
 }
 
 .control {
-  flex: 1 1 50%;
+  flex: 1 1 auto;
   position: relative;
 }
 
 .control__label {
   position: absolute;
+  transform: translateY(-100%);
+  text-transform: uppercase;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+.control__input {
+  width: clamp(10rem, 100%, 17rem);
+  padding: 0.2rem 0.5rem;
+  border: 1px solid var(--btn_border_col_main);
+  border-radius: 0.2rem;
+  background-color: var(--bg_input_subtle_white);
+  outline: none;
 }
 
 .content__signup {
   padding: 0.6rem var(--pading_right_section);
+}
+
+.control__input:invalid,
+.control__input:focus:empty {
+  border-color: var(--btn_border_col_alert);
+}
+
+.control__input:valid,
+.control__input:focus:valid {
+  border-color: var(--btn_border_col_valid);
+}
+
+.control__input:placeholder-shown {
+  border-color: var(--btn_border_col_main);
 }
 
 .signup__btn {
@@ -107,6 +144,7 @@
   border-radius: 0.3rem;
   padding: 0.5rem 2.5rem;
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  transition: all 200ms;
   cursor: pointer;
   height: 3rem;
   width: 14rem;
@@ -114,7 +152,8 @@
 }
 
 .signup__btn:hover {
-  border: 0.15rem solid black;
+  box-shadow: rgba(45, 45, 102, 0.2) 3px 7px 10px 0px;
+  background-color: var(--btn_bg_col_main_focus);
 }
 
 .content__login {

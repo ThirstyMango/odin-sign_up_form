@@ -54,51 +54,90 @@
           <p>What are you waiting for?</p>
         </div>
 
-        <form class="content_form form" action="#" method="get">
-          <h1 class="form__header">Let's do this!</h1>
+        <div class="content__form-container">
+          <h1>Let's do this!</h1>
+          <form id="form-main" class="form" action="#" method="get">
+            <div class="form__control control">
+              <label for="first_name" class="control__label">
+                First name *</label
+              >
+              <input
+                id="first_name"
+                type="text"
+                class="control__input"
+                required
+                placeholder=""
+              />
+            </div>
 
-          <div class="form__control control">
-            <label for="first_name" class="control__label"> First name </label>
-            <input
-              id="first_name"
-              type="text"
-              class="control__input"
-              required
-            />
-          </div>
+            <div class="form__control control">
+              <label for="last_name" class="control__label"> Last name *</label>
+              <input
+                id="last_name"
+                type="text"
+                class="control__input"
+                required
+                placeholder=""
+              />
+            </div>
 
-          <div class="form__control control">
-            <label for="last_name" class="control__label"> Last name </label>
-            <input id="last_name" type="text" class="control__input" required />
-          </div>
+            <div class="form__control control">
+              <label for="email" class="control__label">Email *</label>
+              <input
+                id="email"
+                type="email"
+                class="control__input"
+                required
+                placeholder=""
+                pattern="^[^@\s]+@[^@\s]+\.[^@\s]+$"
+              />
+            </div>
 
-          <div class="form__control control">
-            <label for="email" class="control__label">Email</label>
-            <input id="email" type="text" class="control__input" required />
-          </div>
+            <div class="form__control control">
+              <label for="phone_number" class="control__label">
+                Phone number *
+              </label>
+              <input
+                id="phone_number"
+                type="tel"
+                class="control__input"
+                required
+                placeholder=""
+                pattern="^[\s]*([\+]?[\s\-]?[\d]{0,3})?[\s\-]?[\d]{2,4}[\s\-]?[\d]{2,4}[\s\-]?[\d]{2,4}\s*$"
+              />
+            </div>
 
-          <div class="form__control control">
-            <label for="phone_number" class="control__label">
-              Phone number
-            </label>
-            <input id="phone_number" type="text" class="control__input" />
-          </div>
+            <div class="form__control control">
+              <label for="password" class="control__label"> Password *</label>
+              <input
+                id="password"
+                type="password"
+                class="control__input"
+                required
+                placeholder=""
+                pattern="^(?=.*[A-Z])(?=.*[a-z])(?=.*[\d]).{6,}$"
+              />
+            </div>
 
-          <div class="form__control control">
-            <label for="password" class="control__label"> Password </label>
-            <input id="password" type="text" class="control__input" />
-          </div>
-
-          <div class="form__control control">
-            <label for="confirm_password" class="control__label">
-              Confirm password
-            </label>
-            <input id="confirm_password" type="text" class="control__input" />
-          </div>
-        </form>
-
+            <div class="form__control control">
+              <label for="confirm_password" class="control__label">
+                Confirm password *
+              </label>
+              <input
+                id="confirm_password"
+                type="password"
+                class="control__input"
+                required
+                placeholder=""
+                pattern="^(?=.*[A-Z])(?=.*[a-z])(?=.*[\d]).{6,}$"
+              />
+            </div>
+          </form>
+        </div>
         <div class="content__signup signup">
-          <button class="signup__btn" type="button">Create account</button>
+          <button class="signup__btn" type="submit" form="form-main">
+            Create account
+          </button>
         </div>
 
         <p class="content__login">
